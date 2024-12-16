@@ -4,7 +4,7 @@
 
 # tasks file for kvm_provision
 - name: Ensure requirements in place
-  ansible.builtin.package:
+  ansible.builtin.dnf:
     name:
       - guestfs-tools
       - python3-libvirt
