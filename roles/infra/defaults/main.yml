@@ -1,8 +1,8 @@
 ---
 # defaults file for aap lab infra
-base_image_name: Fedora-Cloud-Base-34-1.2.x86_64.qcow2
-base_image_url: https://download.fedoraproject.org/pub/fedora/linux/releases/34/Cloud/x86_64/images/{{ base_image_name }}
-base_image_sha: b9b621b26725ba95442d9a56cbaa054784e0779a9522ec6eafff07c6e6f717ea
+base_image_name: Fedora-Cloud-Base-Generic-41-1.4.x86_64.qcow2
+base_image_url: https://download.fedoraproject.org/pub/fedora/linux/releases/41/Cloud/x86_64/images/{{ base_image_name }}
+base_image_sha: 6205ae0c524b4d1816dbd3573ce29b5c44ed26c9fbc874fbe48c41c89dd0bac2
 libvirt_pool_dir: "/var/lib/libvirt/images"
 vm_name: f34-dev
 vm_vcpus: 2
