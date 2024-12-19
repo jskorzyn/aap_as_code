@@ -1,0 +1,39 @@
+---
+- name: Remove AAP Infra VMs
+  hosts: localhost
+  gather_facts: false
+  become: true
+  # vars:
+  #   pool_dir: "/var/lib/libvirt/images"
+  #   vm: rhel95
+  #   vcpus: 4
+  #   ram_mb: 4096
+  #   cleanup: false
+  #   net: default
+  #   ssh_pub_key: "/home/jskorzyn/.ssh/id_rsa.pub"
+
+  tasks:
+    - name: List all VMs
+      community.libvirt.virt:
+        command: list_vms
+      register: all_vms
+    
+    - name: Show all VMs
+      ansible.builtin.debug:
+        var: all_vms.list_vms
+
+    - name: Remove all VMs
+      community.libvirt.virt:
+        name: "{{ item }}"
+        state: destroyed
+      loop: "{{ all_vms.list_vms }}"
+      when: "item != 'win11'" 
+
+    - name: Remove all VMs
+      community.libvirt.virt:
+        name: "{{ item }}"
+        command: undefine
+        force: true
+      loop: "{{ all_vms.list_vms }}"
+      when: "item != 'win11'" 
+    

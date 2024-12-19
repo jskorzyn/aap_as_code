@@ -1,10 +1,12 @@
 ---
 # defaults file for aap lab infra
 base_image_name: Fedora-Cloud-Base-Generic-41-1.4.x86_64.qcow2
-base_image_url: https://download.fedoraproject.org/pub/fedora/linux/releases/41/Cloud/x86_64/images/{{ base_image_name }}
-base_image_sha: 6205ae0c524b4d1816dbd3573ce29b5c44ed26c9fbc874fbe48c41c89dd0bac2
+# base_image_url: https://download.fedoraproject.org/pub/fedora/linux/releases/41/Cloud/x86_64/images/{{ base_image_name }}
+base_image_url: https://access.cdn.redhat.com/content/origin/files/sha256/9d/9d11248599b91178a600202412ad3ffc6f1c75c050d7b3c5484dc3f46fc06582/rhel-9.5-x86_64-kvm.qcow2?user=49f93fc7e65909fbea9a28f60448b906&_auth_=1734360659_1b9b6d4c880e3b39aa8656b18c1ebcee
+base_image_sha: 9d11248599b91178a600202412ad3ffc6f1c75c050d7b3c5484dc3f46fc06582
+# base_image_sha: 6205ae0c524b4d1816dbd3573ce29b5c44ed26c9fbc874fbe48c41c89dd0bac2
 libvirt_pool_dir: "/var/lib/libvirt/images"
-vm_name: f34-dev
+vm_name: rhel95-dev
 vm_vcpus: 2
 vm_ram_mb: 2048
 vm_net: default

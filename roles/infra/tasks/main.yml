@@ -63,3 +63,4 @@
     path: "/tmp/{{ base_image_name }}"
     state: absent
   when: cleanup_tmp | bool
+  
